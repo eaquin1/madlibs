@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Madlib Choices{% endblock %}
+{% block content %}
+    <h1>Madlib Time!</h1>
+    <form action="/forms">
+        <label for="choices">Choose a story:</label>
+        <select id="story_id" name="story_id">
+            {% for choice in choices %}
+                <option value="{{choice.code}}">{{choice.title}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+      </form>
+{% endblock %}
